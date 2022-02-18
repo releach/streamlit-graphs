@@ -84,8 +84,8 @@ def app():
         st.success("Done")
         agraph(list(store.getNodes()), (store.getEdges()), configyago)
 
-    if query_type == "Companies":
-        st.subheader("Companies")
+    if query_type == "Companies and industries":
+        st.subheader("Companies and industries")
         with st.spinner("Loading data"):
             store = get_wikidata_graph()
             st.write("Nodes loaded: " + str(len(store.getNodes())))
