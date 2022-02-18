@@ -53,9 +53,11 @@ def get_wikidata_graph():
 
 def app():
     st.title("LOD Graphs with SPARQL, Python, and Streamlit")
+    st.write("The data here was generated via queries from two linked open data endpoints: [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) and [Yago](https://yago-knowledge.org/). The graphs were generated using [streamlit_agraph](https://github.com/ChrisDelClea/streamlit-agraph).")
+
     st.sidebar.title("Select a graph")
     query_type = st.sidebar.selectbox(
-        "Query Type: ", ["Artist Collaborations", "Companies and industries"]
+        "Query Type: ", ["Artist Collaborations", "Companies and Industries"]
     )
     configwikidata = Config(
         height=900,
@@ -84,8 +86,8 @@ def app():
         st.success("Done")
         agraph(list(store.getNodes()), (store.getEdges()), configyago)
 
-    if query_type == "Companies and industries":
-        st.subheader("Companies and industries")
+    if query_type == "Companies and Industries":
+        st.subheader("Companies and Industries")
         with st.spinner("Loading data"):
             store = get_wikidata_graph()
             st.write("Nodes loaded: " + str(len(store.getNodes())))
