@@ -88,7 +88,7 @@ def load_graph():
     graph.edge("David Hockney", "'A Lawn Being Sprinkled'")
     graph.edge("'A Bigger Splash'", "1967")
     graph.edge("'A Lawn Being Sprinkled'", "1967")
-    graph.edge("'A Bigger Splash'", "Pop art")
+    graph.edge("Pop art", "'A Bigger Splash'")
     graph.edge("Pop art", "'Whaam!''")
     graph.edge("'Whaam!''", "Roy Lichtenstein")
     graph.edge("Pop art", "'Monogram'")
